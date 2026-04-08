@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "module": "commonjs",
+    "target": "ES6",
+    "allowJs": true,
+    "nodeResolution": "node",
+    "importHelpers": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "moduleResolution": "node",
+    "lib": ["DOM", "ES5", "ES6", "ES7"],
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "dist/",
+    "removeComments": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "*": ["node_modules/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/", "tests/", "dist/"]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "wpis-plugin-inventar",
+  "version": "0.1.0",
+  "description": "Obsidian plugin that maintains an inventory of installed plugins per device and vault",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --format=cjs --platform=node --external:obsidian --external:electron --outfile=dist/main.js",
+    "dev": "esbuild src/main.ts --bundle --format=cjs --platform=node --external:obsidian --external:electron --outfile=dist/main.js --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "release": "node scripts/release.js"
+  },
+  "keywords": [
+    "obsidian-plugin",
+    "inventory",
+    "plugin-management"
+  ],
+  "author": "Alexander Waller",
+  "authorUrl": "https://webpoint.at",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@vitest/ui": "^0.31.0",
+    "esbuild": "^0.18.0",
+    "obsidian": "latest",
+    "tslib": "^2.4.0",
+    "typescript": "^5.0.0",
+    "vitest": "^0.31.0"
+  }
+}
