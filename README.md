@@ -35,7 +35,7 @@ Each file is named `<VaultName>_<DeviceName>.md` so they don't conflict with Obs
 
 ### Manual Installation
 
-1. Download the latest release from [GitHub Releases](https://github.com/atwaller/wpis-plugin-inventar/releases)
+1. Download the latest release from [GitHub Releases](https://github.com/walleralexander/wpis-obsidian-plugin-inventar/releases)
 2. Extract to `.obsidian/plugins/wpis-plugin-inventar/` in your vault folder
 3. Reload Obsidian (or enable in Community Plugins panel)
 
@@ -98,6 +98,18 @@ On iOS and Android, the device name will show as "Unknown" because the plugin ca
 ### Obsidian Version Compatibility
 
 This plugin requires **Obsidian 1.0.0 or later**. Earlier versions may not have full event handler support.
+
+## Contributing
+
+Contributions are welcome! Please submit issues or pull requests on [GitHub](https://github.com/walleralexander/wpis-obsidian-plugin-inventar).
+
+## License
+
+This plugin is released under the [MIT License](LICENSE).
+
+## Support
+
+For bug reports, feature requests, or questions, please [open an issue](https://github.com/walleralexander/wpis-obsidian-plugin-inventar/issues) on GitHub.
 
 ## Contributing
 
