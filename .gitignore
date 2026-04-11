@@ -3,6 +3,10 @@ dist/
 *.js
 *.map
 
+# Exception: Include built plugin files
+!dist/main.js
+!dist/manifest.json
+
 # Dependencies
 node_modules/
 
