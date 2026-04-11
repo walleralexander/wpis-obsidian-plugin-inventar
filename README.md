@@ -35,9 +35,10 @@ Each file is named `<VaultName>_<DeviceName>.md` so they don't conflict with Obs
 
 ### Manual Installation
 
-1. Download the latest release from [GitHub Releases](https://github.com/walleralexander/wpis-obsidian-plugin-inventar/releases)
-2. Extract to `.obsidian/plugins/wpis-plugin-inventar/` in your vault folder
-3. Reload Obsidian (or enable in Community Plugins panel)
+1. Open [GitHub Releases](https://github.com/walleralexander/wpis-obsidian-plugin-inventar/releases) and download the asset `wpis-plugin-inventar-vX.Y.Z.zip` from the latest release
+2. Do not use `Source code (zip)` because that archive contains the full repository
+3. Extract the zip so that this structure exists in your vault: `.obsidian/plugins/wpis-plugin-inventar/main.js` and `.obsidian/plugins/wpis-plugin-inventar/manifest.json`
+4. Reload Obsidian (or enable in Community Plugins panel)
 
 ## Configuration
 

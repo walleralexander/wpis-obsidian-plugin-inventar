@@ -40,10 +40,22 @@ jobs:
       - name: Copy manifest to dist
         run: cp manifest.json dist/manifest.json
 
+      - name: Package plugin zip
+        run: |
+          mkdir -p release/wpis-plugin-inventar
+          cp dist/main.js release/wpis-plugin-inventar/main.js
+          cp manifest.json release/wpis-plugin-inventar/manifest.json
+          if [ -f styles.css ]; then
+            cp styles.css release/wpis-plugin-inventar/styles.css
+          fi
+          cd release
+          zip -r "../wpis-plugin-inventar-${GITHUB_REF_NAME}.zip" "wpis-plugin-inventar"
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
+            wpis-plugin-inventar-${{ github.ref_name }}.zip
             dist/main.js
             dist/manifest.json
           draft: false
