@@ -1,6 +1,6 @@
 {
   "name": "wpis-plugin-inventar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Obsidian plugin that maintains an inventory of installed plugins per device and vault",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
