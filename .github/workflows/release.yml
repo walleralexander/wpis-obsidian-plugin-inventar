@@ -60,3 +60,73 @@ jobs:
             dist/manifest.json
           draft: false
           prerelease: false
+
+      - name: Verify latest release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import io
+          import json
+          import os
+          import sys
+          import time
+          import urllib.request
+          import zipfile
+
+          repo = os.environ["GITHUB_REPOSITORY"]
+          tag = os.environ["GITHUB_REF_NAME"]
+          token = os.environ["GH_TOKEN"]
+          expected_asset = f"wpis-plugin-inventar-{tag}.zip"
+          latest_release_url = f"https://api.github.com/repos/{repo}/releases/latest"
+
+          headers = {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+          }
+
+          latest = None
+          for _ in range(10):
+            req = urllib.request.Request(latest_release_url, headers=headers)
+            with urllib.request.urlopen(req) as response:
+              latest = json.load(response)
+
+            if latest.get("tag_name") == tag:
+              break
+
+            time.sleep(6)
+
+          if latest is None or latest.get("tag_name") != tag:
+            print(f"Latest release tag mismatch. Expected {tag}, got {latest.get('tag_name') if latest else 'none'}")
+            sys.exit(1)
+
+          assets = latest.get("assets", [])
+          match = next((asset for asset in assets if asset.get("name") == expected_asset), None)
+          if not match:
+            print(f"Expected release asset not found: {expected_asset}")
+            sys.exit(1)
+
+          download_headers = {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/octet-stream",
+          }
+          asset_req = urllib.request.Request(match["url"], headers=download_headers)
+          with urllib.request.urlopen(asset_req) as response:
+            zip_bytes = response.read()
+
+          with zipfile.ZipFile(io.BytesIO(zip_bytes)) as archive:
+            names = set(archive.namelist())
+
+          required_paths = {
+            "wpis-plugin-inventar/main.js",
+            "wpis-plugin-inventar/manifest.json",
+          }
+          missing = sorted(path for path in required_paths if path not in names)
+          if missing:
+            print("Release asset zip is missing required plugin files:")
+            for missing_path in missing:
+              print(f" - {missing_path}")
+            sys.exit(1)
+
+          print(f"Verified latest release asset {expected_asset} with required plugin files.")
+          PY

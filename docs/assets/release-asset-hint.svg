@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260" role="img" aria-label="Release asset selection hint">
+  <defs>
+    <style>
+      .bg { fill: #f7f8fa; }
+      .card { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+      .good { fill: #e7f8ec; stroke: #2da44e; stroke-width: 2; }
+      .bad { fill: #fff1f0; stroke: #d1242f; stroke-width: 2; }
+      .title { font: 700 22px Segoe UI, Arial, sans-serif; fill: #1f2328; }
+      .label { font: 600 16px Segoe UI, Arial, sans-serif; fill: #1f2328; }
+      .text { font: 14px Segoe UI, Arial, sans-serif; fill: #57606a; }
+      .ok { font: 700 16px Segoe UI, Arial, sans-serif; fill: #1a7f37; }
+      .no { font: 700 16px Segoe UI, Arial, sans-serif; fill: #cf222e; }
+      .mono { font: 13px Consolas, Menlo, monospace; fill: #1f2328; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="900" height="260" rx="12"/>
+  <text class="title" x="24" y="38">Manual Install: choose the correct release zip</text>
+
+  <rect class="good" x="24" y="58" width="410" height="170" rx="10"/>
+  <text class="ok" x="44" y="92">Correct</text>
+  <text class="label" x="44" y="122">Download this asset from Releases:</text>
+  <text class="mono" x="44" y="148">wpis-plugin-inventar-vX.Y.Z.zip</text>
+  <text class="text" x="44" y="178">Contains: wpis-plugin-inventar/main.js</text>
+  <text class="text" x="44" y="200">and wpis-plugin-inventar/manifest.json</text>
+
+  <rect class="bad" x="466" y="58" width="410" height="170" rx="10"/>
+  <text class="no" x="486" y="92">Do not use</text>
+  <text class="label" x="486" y="122">GitHub auto-generated archive:</text>
+  <text class="mono" x="486" y="148">Source code (zip)</text>
+  <text class="text" x="486" y="178">Contains the whole repository, not the plugin folder</text>
+  <text class="text" x="486" y="200">layout expected by Obsidian manual install</text>
+</svg>

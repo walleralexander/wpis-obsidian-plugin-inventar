@@ -40,6 +40,10 @@ Each file is named `<VaultName>_<DeviceName>.md` so they don't conflict with Obs
 3. Extract the zip so that this structure exists in your vault: `.obsidian/plugins/wpis-plugin-inventar/main.js` and `.obsidian/plugins/wpis-plugin-inventar/manifest.json`
 4. Reload Obsidian (or enable in Community Plugins panel)
 
+Mini screenshot (which zip to use):
+
+![Release asset selection hint](docs/assets/release-asset-hint.svg)
+
 ## Configuration
 
 ### Inventory Folder
