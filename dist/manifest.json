@@ -1,0 +1,12 @@
+{
+  "id": "wpis-plugin-inventar",
+  "name": "Plugin Inventar",
+  "version": "0.1.0",
+  "minAppVersion": "1.0.0",
+  "description": "Automatically maintain an inventory of all installed plugins per device and Vault. Perfect for Obsidian Sync users to track plugin changes across devices without Git conflicts.",
+  "author": "Alexander Waller",
+  "authorUrl": "https://webpoint.at",
+  "fundingUrl": "https://github.com/sponsors/atwaller",
+  "isDesktopOnly": false,
+  "hasPreview": false
+}
